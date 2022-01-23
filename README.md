@@ -4,7 +4,7 @@ The [Nepali National corpus (NNC)](https://www.sketchengine.eu/nepali-national-c
 ## Project Description
 The core file of the NNC corpus has been compressed to the file named [nn_updated_ah.zip](https://github.com/naamiinepal/POS-Tagger/blob/parse/nnc_updated_ah.zip).
 The parser is a derivative of [POS-Tagger_Nepali](https://github.com/raju-shrestha/POS-Tagger-Nepali/blob/master/ParseXMLCorpus.py).
-It contains two directories: **cs** and **gs**.
+It contains two directories: **cs** and **gs** with subdirectories as shown below.
 
 ### Structure.
 ```
@@ -44,7 +44,7 @@ All the leaves on this tree structre acquire `.xml` files that contains the requ
 ## Objective
 To parse the raw XML files from all the aforementioned directories into a dataframe containing the `list of words` in one column and their `POS tags` in the other.
 
-### Run
+## Run
 To run the program, first extract `nnc_updated_ah.zip`.
 Then run:
 ```
@@ -55,7 +55,8 @@ And, simply do:
 ```
 python parse_XML.py -i ".\nnc_updated_ah\<directory_containing_xml_files>" -o ".\output_dir\<filename.gz>"
 ```
-### Output File structure.
+## Output
+### Output File structure
 The dataframe will have two columns - `words` and `tags`.
 Each row represents a sentence/instance that is comprised of a list of constituent words and a list of their corresponding POS tags.
 
@@ -63,9 +64,9 @@ Each row represents a sentence/instance that is comprised of a list of constitue
 [word1, word2, ..., wordn]<comma>[tag1, tag2, ..., tagn]
 ```
 
-### Output Directory.
+### Output Directory
 After parsing, the files will be stored in the directory [output_dir](https://github.com/naamiinepal/POS-Tagger/tree/parse/output_dir). 
 
-### Ouptut File format.
+### Ouptut File format
 The output files are compressed DataFrames with extension `.gz` which can be loaded using `pandas.read_csv()` function.
 The contents of the DataFrame should be loaded in `utf-8` encoding.
