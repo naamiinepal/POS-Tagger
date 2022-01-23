@@ -12,7 +12,7 @@ sudo apt-get install unzip
 ```
 Then,
 ```
-unzip file.zip
+unzip nn_updated_ah.zip
 ```
 you will find two directories: **cs** and **gs** with subdirectories as shown below.
 ```
