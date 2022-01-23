@@ -2,11 +2,19 @@
 The [Nepali National corpus (NNC)](https://www.sketchengine.eu/nepali-national-corpus/) is a Nepali corpus built up 13 million words that are lemmatised and part-of-speech tagged. The corpus consists of three different types of corpora: written corpus, parallel corpus and spoken corpus which is not part of the NNC corpus in Sketch Engine. The corpus was created within the NeLRaLEC project funded by Asia IT & C Programme of the European Commission. Corpus texts were PoS tagged and later lemmatised by Bal Krishna Bal from [Language Technology Kendra](http://ltk.org.np/) and Andrew Hardie from Lancaster University.
 
 ## Project Description
-The core file of the NNC corpus has been compressed to the file named [nn_updated_ah.zip](https://github.com/naamiinepal/POS-Tagger/blob/parse/nnc_updated_ah.zip).
 The parser is a derivative of [POS-Tagger_Nepali](https://github.com/raju-shrestha/POS-Tagger-Nepali/blob/master/ParseXMLCorpus.py).
-It contains two directories: **cs** and **gs** with subdirectories as shown below.
 
 ### Structure.
+The core file of the NNC corpus has been compressed to the file named [nn_updated_ah.zip](https://github.com/naamiinepal/POS-Tagger/blob/parse/nnc_updated_ah.zip).
+After you extract the `zip` file using 
+```
+sudo apt-get install unzip
+```
+Then,
+```
+unzip file.zip
+```
+you will find two directories: **cs** and **gs** with subdirectories as shown below.
 ```
 └───nnc_updated_ah
     ├───cs
@@ -86,6 +94,9 @@ print(type(new_df['words'].iloc[0]))  # List.
 ```
 
 ## Visualization of the sentence lengths
+
+### Corpus Description
+![Corpus Description](./pictures/corpus_stat.png)
 
 ### Box Plot 
 ![Box Plot of Sentence Length](./pictures/lengths_all_box.png)
