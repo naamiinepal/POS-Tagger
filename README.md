@@ -69,4 +69,26 @@ After parsing, the files will be stored in the directory [output_dir](https://gi
 
 ### Ouptut File format
 The output files are compressed DataFrames with extension `.gz` which can be loaded using `pandas.read_csv()` function.
-The contents of the DataFrame should be loaded in `utf-8` encoding.
+
+#### Note:
+- The contents of the DataFrame should be loaded in `utf-8` encoding.
+- When you load the dataframe using `pandas.read_csv()` function, the data is rendered as Pandas Object rather than lists. To solve this, do:
+```
+import ast
+df = pd.read_csv("file_name.gz", encoding = 'utf-8')
+
+# Before.
+print(type(df['words'].iloc[0]))  # String.
+
+# After.
+new_df = df['words'].apply(lambda x: ast.literal_eval(x))
+print(type(new_df['words'].iloc[0]))  # List.
+```
+
+## Visualization of the sentence lengths
+
+### Box Plot 
+![Box Plot of Sentence Length](./pictures/lengths_all_box.png)
+
+### KDE Plot 
+![KDE Plot of Sentence Length](./pictures/lengths_all.png)
