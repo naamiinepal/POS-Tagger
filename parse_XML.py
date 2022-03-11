@@ -170,8 +170,8 @@ def get_sent_tags(path):
                                         if len(words_i) > 4:
                                             ALLTAG.append(tags_i)
                                             ALLWORD.append(words_i)                                
-                                            #print('\n')
-            
+                                           #print('\n')                                
+    
     return DataFrame({"words": ALLWORD,
                       "tags": ALLTAG})
 
@@ -184,7 +184,8 @@ if __name__ == '__main__':
     parser.add_argument("--files_path", "-i", help="Path to the directory containing the XML files." )
     parser.add_argument("--out_file_path", "-o", help="Path to the file to store the DataFrame. Must end with .gz" )
     args = parser.parse_args()
-
+    
+    
     # Note time.
     start = time()
 
@@ -193,7 +194,7 @@ if __name__ == '__main__':
 
     # Save the DF to a compressed .gz file.
     out_filename = args.out_file_path
-    result.to_csv(out_filename, index = None, compression = 'gzip')
+    #result.to_csv(out_filename, index = None, compression = 'gzip')
 
     end = time()
 
